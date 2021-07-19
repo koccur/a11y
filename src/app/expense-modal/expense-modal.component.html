@@ -1,0 +1,41 @@
+<section>
+  <div fxFlex fxLayoutAlign="end">
+    <button aria-label="close popup" type="button" class="transparent" (click)="cancel()">
+      <svg class="icon" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;"
+           xml:space="preserve"
+           aria-label="close popup icon"><g><g><path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+			L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+			c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+			l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+			L284.286,256.002z"/></g></g></svg>
+    </button>
+  </div>
+  <h2 style="text-align: center">Expense</h2>
+  <form *ngIf="!data || !data.removal" fxFlex fxLayout="column" fxLayoutGap="0.5rem">
+    <div fxFlex fxLayout="column" fxLayoutGap="0.25rem">
+      <label for="name">Name</label>
+      <input [(ngModel)]="dataName" type="text" name="name" id="name">
+    </div>
+    <div fxFlex fxLayout="column" fxLayoutGap="0.25rem">
+      <label for="price">Price</label>
+      <input [(ngModel)]="dataPrice" type="text" name="price" id="price">
+    </div>
+    <div fxFlex fxLayout.xs="column" fxLayout="row" fxLayoutAlign="center center" class="m-t-l" fxLayoutGap="0.5rem">
+      <button class="white-button" type="button" aria-label="Cancel action" (click)="cancel()">Cancel</button>
+      <div style="width:2rem"></div>
+      <button class="black-button blue-outline" type="button" aria-label="Add expense action" (click)="add()">Add</button>
+    </div>
+  </form>
+
+  <ng-container *ngIf="data && data.removal">
+    <p>Are you sure that you want to delete this element?</p>
+    <p>{{data.name}}: {{data.price}}</p>
+
+    <div fxFlex fxLayout.xs="column" fxLayoutGap="0.5rem" fxLayout="row" fxLayoutAlign="center center" class="m-t-l">
+      <button class="white-button" type="button" aria-label="Cancel action" (click)="cancel()">Cancel</button>
+      <div style="width:2rem"></div>
+      <button class="black-button blue-outline" type="button" aria-label="Remove element" (click)="remove()">Remove</button>
+    </div>
+  </ng-container>
+</section>
+

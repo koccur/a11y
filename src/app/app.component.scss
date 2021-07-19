@@ -1,0 +1,100 @@
+.avatar {
+  width: 2.5rem;
+  padding: 0.5rem;
+  height: 2.5rem;
+}
+
+.avatar-section {
+  max-height: 3rem;
+}
+
+a.active {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.h2-size {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.touch-space {
+  min-height: calc(44px - 1rem);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+nav {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.menu {
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 0;
+
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .ext-button {
+    position: absolute;
+    top: 0;
+    left: 15rem;
+    z-index: 1;
+    background: 0;
+    border: 0;
+  }
+
+  .menu-list {
+    &.hidden {
+      display: none;
+
+      &.show {
+        display: flex;
+
+        li {
+          margin: 1rem 0;
+          &:hover{
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    position: absolute;
+    border: 1px solid black;
+    height: 20rem;
+    top: 0;
+    margin-top: 0;
+    left: 0;
+    max-width: 15rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    text-align: left;
+  }
+}
+
+.floating-button{
+  position: absolute;
+  bottom: 2rem;
+  right:2rem;
+  background-color: transparent;
+  border:0;
+  font-size: 1rem;
+  font-weight: bold;
+}

@@ -1,0 +1,149 @@
+.biggerFont {
+  font-size: 2rem;
+}
+
+form {
+  margin: 1rem 2rem;
+  max-width: 40rem;
+  min-width: 14rem;
+  @media screen and (min-width: 768px) {
+    min-width: 30rem;
+    margin: 4rem 8rem;
+  }
+  @media screen and (min-width: 1024px) {
+    min-width: 40rem;
+  }
+
+  input {
+    border: 2px solid black;
+    height: 2rem;
+  }
+
+  .table-container {
+    padding: 0 4rem;
+
+    table {
+      width: 100%;
+
+      caption {
+        text-align: left;
+      }
+
+      tr {
+        height: 3rem;
+
+        &:nth-child(1) {
+          height: 0;
+        }
+      }
+
+      tr > th:nth-child(1) {
+        text-align: left;
+        width: 4rem;
+      }
+
+      tr > th:nth-child(2) {
+        font-weight: 400;
+      }
+
+      tr > th:nth-child(3), tr > th:nth-child(4) {
+        width: 4rem;
+      }
+    }
+  }
+}
+
+
+.stick-to-right-button {
+  margin-left: calc(100% - 12rem);
+  background: none;
+  border: none;
+  color: black;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.border-top {
+  border-top: 1px solid black;
+}
+
+.error-wrong-input {
+  display: none;
+}
+
+form .input-container {
+  label {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+
+
+  .icon, .error {
+    display: none;
+  }
+
+  &.invalid {
+    .icon, .error {
+      display: inline-block;
+    }
+
+    input, textarea {
+      border: 2px solid red;
+    }
+
+    &.wrong-input {
+      .error-wrong-input {
+        display: block;
+        margin-top: 0.5rem;
+        color: darkred;
+        font-weight: 600;
+      }
+
+      .error {
+        display: none;
+      }
+    }
+
+    .error {
+      margin-top: 0.5rem;
+      color: darkred;
+      font-weight: 600;
+
+    }
+  }
+}
+
+fieldset {
+  div {
+    display: flex;
+    align-items: center;
+
+    input {
+      margin-top: 0;
+    }
+  }
+
+  .error, .icon {
+    display: none;
+  }
+
+  &.invalid {
+    border: 2px solid red;
+
+    .error, .icon {
+      display: block;
+    }
+
+    legend {
+      color: red;
+      font-weight: 600;
+    }
+  }
+}
+.hidden{
+  visibility: hidden;
+  height: 0;
+}

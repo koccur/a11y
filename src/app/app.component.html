@@ -1,0 +1,75 @@
+<header fxFlex fxLayout="row" fxLayoutAlign="space-between center" id="header">
+  <button class="menu"  type="button" aria-haspopup="true">
+    <button aria-label="close popup" type="button" class="hidden ext-button" (click)="toggleMenu()" [ngClass]="{'show':openMenuSwitch}">
+      <svg class="icon" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;"
+           xml:space="preserve"
+           aria-label="close popup icon"><g><g><path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+			L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+			c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+			l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+			L284.286,256.002z"/></g></g></svg>
+    </button>
+    <img src="/assets/square.png" alt="Open menu" (click)="toggleMenu()"/>
+    <ul class="menu-list hidden" [ngClass]="{'show':openMenuSwitch}">
+      <li class="no-list-style" (click)="toggleMenu()"><a routerLink="insurer" [ngClass]="{'active':navigationLink==='insurer'}">Insurance</a></li>
+      <li class="no-list-style" (click)="toggleMenu()"><a routerLink="#" [ngClass]="{'active':navigationLink==='About us'}">About us</a></li>
+      <li class="no-list-style" (click)="toggleMenu()"><a routerLink="claim-report" [ngClass]="{'active':navigationLink==='claim-report'}">Claim report</a></li>
+      <li class="no-list-style" (click)="toggleMenu()"><a routerLink="#" [ngClass]="{'active':navigationLink==='Contact'}">Contact</a></li>
+    </ul>
+  </button>
+  <section aria-label="insurer header" fxFlex fxLayout="row" fxLayoutAlign="start center">
+    <p class="h2-size">The insurer</p>
+    <img class="avatar" src="/assets/Circle_Grey_Solid.png" alt="Insurer avatar"/>
+  </section>
+  <nav>
+    <ul fxFlex fxLayout="row" fxLayoutGap="1rem" class="no-list-style">
+      <li class="min-width-link"><a id="firstLink" routerLink="insurer" [ngClass]="{'active':navigationLink==='insurer'}">Insurance</a></li>
+      <li class="min-width-link"><a routerLink="#" [ngClass]="{'active':navigationLink==='About us'}">About us</a></li>
+      <li class="min-width-link"><a routerLink="claim-report" [ngClass]="{'active':navigationLink==='claim-report'}">Claim report</a></li>
+      <li class="min-width-link"><a routerLink="#" [ngClass]="{'active':navigationLink==='Contact'}">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+<main fxFlex fxLayout="column">
+  <router-outlet></router-outlet>
+</main>
+<footer fxFlex fxLayout="column" fxLayout.md="row" fxLayoutAlign="space-between top" class="gray-background">
+  <section class="avatar-section" aria-label="insurer footer" fxFlex fxLayout="row" fxLayoutAlign="start center">
+    <p class="h2-size">The insurer</p>
+    <img class="avatar" src="/assets/Circle_Grey_Solid.png" alt="picture of something very important / Insurer avatar"/>
+  </section>
+
+  <nav aria-label="links" fxFlex fxLayout="row">
+    <div fxFlex fxLayout="column">
+      <p class="m-b-0"><b>About us</b></p>
+      <ul aria-label="aboutUs" class="no-list-style">
+        <li class="p-sm p-l-0 touch-space"><a href="">Newsroom</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Careers</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Our story</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Customer Stories</a></li>
+      </ul>
+    </div>
+    <div fxFlex fxLayout="column">
+      <p class="m-b-0"><b>Products</b></p>
+      <ul aria-label="products" class="no-list-style">
+        <li class="p-sm p-l-0 touch-space"><a href="">Vacation / Holiday</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Student / Scholar</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Mission</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Marine Captain / Crew</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Employer / Bussiness Traveler</a></li>
+      </ul>
+    </div>
+    <div fxFlex fxLayout="column">
+      <p class="m-b-0"><b>Members</b></p>
+      <ul aria-label="members" class="no-list-style">
+        <li class="p-sm p-l-0 touch-space"><a href="">Forms Library</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Find a Doctor</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Renew Policy</a></li>
+        <li class="p-sm p-l-0 touch-space"><a href="">Claims Center</a></li>
+      </ul>
+    </div>
+  </nav>
+  <button type="button" class="floating-button" (click)="scrollToTop()">Back to top</button>
+</footer>
+
