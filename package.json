@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh" : "ng build --prod --base-href https://koccur.github.io/a11y/",
+    "deploy:gh": "ngh --dir=dist/a11y",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
